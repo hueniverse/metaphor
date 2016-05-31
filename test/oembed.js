@@ -143,7 +143,7 @@ describe('OEmbed', () => {
         it('returns a full service endpoint', (done) => {
 
             const router = Metaphor.oembed.providers(Providers);
-            const resource = 'http://nytimes.com/2016/05/29/world/europe/rise-of-donald-trump-tracks-growing-debate-over-global-fascism.html?rref=collection%252Fnewseventcollection%252FPresidential+Election+2016&contentId=&mediaId=&referrer=http%3A%2F%2Fwww.nytimes.com%2F%3Faction%3Dclick%26contentCollection%3DPolitics%26region%3DTopBar%26module%3DHomePage-Button%26pgtype%3Darticle%26WT.z_jog%3D1%26hF%3Dt%26vS%3Dundefined&priority=true&action=click&contentCollection=Politics&module=Collection&region=Marginalia&src=me&version=newsevent&pgtype=article';
+            const resource = 'http://nytimes.com/2016/05/29/world/europe/rise-of-donald-trump-tracks-growing-debate-over-global-fascism.html';
             const url = router.match(resource);
             expect(url).to.equal(`https://www.nytimes.com/svc/oembed/json/?url=${encodeURIComponent(resource)}&format=json`);
             done();
@@ -152,7 +152,7 @@ describe('OEmbed', () => {
         it('returns a full service endpoint (options)', (done) => {
 
             const router = Metaphor.oembed.providers(Providers);
-            const resource = 'http://nytimes.com/2016/05/29/world/europe/rise-of-donald-trump-tracks-growing-debate-over-global-fascism.html?rref=collection%252Fnewseventcollection%252FPresidential+Election+2016&contentId=&mediaId=&referrer=http%3A%2F%2Fwww.nytimes.com%2F%3Faction%3Dclick%26contentCollection%3DPolitics%26region%3DTopBar%26module%3DHomePage-Button%26pgtype%3Darticle%26WT.z_jog%3D1%26hF%3Dt%26vS%3Dundefined&priority=true&action=click&contentCollection=Politics&module=Collection&region=Marginalia&src=me&version=newsevent&pgtype=article';
+            const resource = 'http://nytimes.com/2016/05/29/world/europe/rise-of-donald-trump-tracks-growing-debate-over-global-fascism.html';
             const url = router.match(resource, { maxWidth: 250, maxHeight: 120 });
             expect(url).to.equal(`https://www.nytimes.com/svc/oembed/json/?url=${encodeURIComponent(resource)}&format=json&maxheight=120&maxwidth=250`);
             done();
@@ -173,7 +173,7 @@ describe('OEmbed', () => {
         it('parses oembed.com providers json file', (done) => {
 
             const router = Metaphor.oembed.providers(Providers);
-            const url = router.lookup('http://nytimes.com/2016/05/29/world/europe/rise-of-donald-trump-tracks-growing-debate-over-global-fascism.html?rref=collection%252Fnewseventcollection%252FPresidential+Election+2016&contentId=&mediaId=&referrer=http%3A%2F%2Fwww.nytimes.com%2F%3Faction%3Dclick%26contentCollection%3DPolitics%26region%3DTopBar%26module%3DHomePage-Button%26pgtype%3Darticle%26WT.z_jog%3D1%26hF%3Dt%26vS%3Dundefined&priority=true&action=click&contentCollection=Politics&module=Collection&region=Marginalia&src=me&version=newsevent&pgtype=article');
+            const url = router.lookup('http://nytimes.com/2016/05/29/world/europe/rise-of-donald-trump-tracks-growing-debate-over-global-fascism.html');
             expect(url).to.equal('https://www.nytimes.com/svc/oembed/json/');
             done();
         });
@@ -181,7 +181,7 @@ describe('OEmbed', () => {
         it('matches resource (www)', (done) => {
 
             const router = Metaphor.oembed.providers(Providers);
-            const url = router.lookup('http://www.nytimes.com/2016/05/29/world/europe/rise-of-donald-trump-tracks-growing-debate-over-global-fascism.html?rref=collection%252Fnewseventcollection%252FPresidential+Election+2016&contentId=&mediaId=&referrer=http%3A%2F%2Fwww.nytimes.com%2F%3Faction%3Dclick%26contentCollection%3DPolitics%26region%3DTopBar%26module%3DHomePage-Button%26pgtype%3Darticle%26WT.z_jog%3D1%26hF%3Dt%26vS%3Dundefined&priority=true&action=click&contentCollection=Politics&module=Collection&region=Marginalia&src=me&version=newsevent&pgtype=article');
+            const url = router.lookup('http://www.nytimes.com/2016/05/29/world/europe/rise-of-donald-trump-tracks-growing-debate-over-global-fascism.html');
             expect(url).to.equal('https://www.nytimes.com/svc/oembed/json/');
             done();
         });
