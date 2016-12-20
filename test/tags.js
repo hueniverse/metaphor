@@ -176,5 +176,29 @@ describe('Metaphor', () => {
                 done();
             });
         });
+
+        it('ignores uses canonical url over others', (done) => {
+
+            const html = `<html prefix="og: http://ogp.me/ns#">
+            <head>
+                <title>The Rock (1996) </title>
+                <link rel="canonical" href="http://www.imdb.com/title/tt0117500/canonical" />
+                <meta property="og:url" content="http://www.imdb.com/title/tt0117500/" />
+            </head>
+            <body>
+            </body>
+            </html>`;
+
+            Metaphor.parse(html, 'http://www.imdb.com/title/tt0117500/', {}, (description) => {
+
+                expect(description).to.equal({
+                    type: 'website',
+                    url: 'http://www.imdb.com/title/tt0117500/canonical',
+                    sources: ['resource']
+                });
+
+                done();
+            });
+        });
     });
 });
