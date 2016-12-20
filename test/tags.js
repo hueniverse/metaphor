@@ -177,7 +177,7 @@ describe('Metaphor', () => {
             });
         });
 
-        it('uses canonical url over others when option set', (done) => {
+        it('uses canonical url over others when useCanonical option set', (done) => {
 
             const html = `<html prefix="og: http://ogp.me/ns#">
             <head>
@@ -201,7 +201,7 @@ describe('Metaphor', () => {
             });
         });
 
-        it('uses og:url over canonical when option not set', (done) => {
+        it('uses og:url over canonical when useCanonical option not set', (done) => {
 
             const html = `<html prefix="og: http://ogp.me/ns#">
             <head>
@@ -214,6 +214,29 @@ describe('Metaphor', () => {
             </html>`;
 
             Metaphor.parse(html, 'http://www.imdb.com/title/tt0117500/', { useCanonical: false }, (description) => {
+
+                expect(description).to.equal({
+                    type: 'website',
+                    url: 'http://www.imdb.com/title/tt0117500/',
+                    sources: ['ogp']
+                });
+
+                done();
+            });
+        });
+
+        it('uses og:url when useCanonical option set but no canonical', (done) => {
+
+            const html = `<html prefix="og: http://ogp.me/ns#">
+            <head>
+                <title>The Rock (1996) </title>
+                <meta property="og:url" content="http://www.imdb.com/title/tt0117500/" />
+            </head>
+            <body>
+            </body>
+            </html>`;
+
+            Metaphor.parse(html, 'http://www.imdb.com/title/tt0117500/', { useCanonical: true }, (description) => {
 
                 expect(description).to.equal({
                     type: 'website',
