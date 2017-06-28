@@ -98,6 +98,7 @@ engine.describe('https://www.youtube.com/watch?v=cWDdd5KKhts', (description) => 
 
 A reusable engine used to set global processing settings for each description where:
 - `options` - optional settings where:
+    - `agents` - provide http/https agents for wreck, can be used for proxy. 
     - `providers` - if `true`, the [oEmbed](http://oembed.com/) providers list file is used to look up
       resources when oEmbed [discovery](http://oembed.com/#section4) doesn't work. The module ships with
       a copy of the providers.json file. To use a different provider list, pass an array compatible with
