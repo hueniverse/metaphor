@@ -22,7 +22,7 @@
     "htmlparser2": "^3.9.2",
     "items": "^2.1.1",
     "joi": "^10.6.0",
-    "wreck": "^10.0.0"
+    "wreck": "^12.2.2"
   },
   "devDependencies": {
     "code": "4.x.x",
