@@ -95,7 +95,7 @@ describe('Metaphor', () => {
                         description: 'Nova meets cows.',
                         type: 'website',
                         sources: ['ogp', 'oembed', 'resource', 'twitter'],
-                        site_name: 'Deviantart',
+                        site_name: 'DeviantArt',
                         icon: {
                             '48': 'http://st.deviantart.net/minish/touch-icons/android-48.png',
                             '96': 'http://st.deviantart.net/minish/touch-icons/android-96.png',
@@ -138,7 +138,7 @@ describe('Metaphor', () => {
                         url: 'http://maaira.deviantart.com/art/Who-are-you-612604046',
                         description: 'Nova meets cows.',
                         type: 'website',
-                        site_name: 'Deviantart',
+                        site_name: 'DeviantArt',
                         sources: ['ogp', 'resource', 'twitter'],
                         icon: {
                             '48': 'http://st.deviantart.net/minish/touch-icons/android-48.png',
@@ -612,7 +612,7 @@ describe('Metaphor', () => {
                     expect(description).to.equal({
                         type: 'website',
                         url: 'http://www.deviantart.com/art/Who-are-you-612604046',
-                        site_name: 'Deviantart',
+                        site_name: 'DeviantArt',
                         thumbnail: {
                             url: 'http://t01.deviantart.net/GRpFefgpAK8ZU15icNW3ZcgOrGE=/fit-in/300x900/filters:no_upscale():origin()/pre14/566b/th/pre/f/2016/153/4/0/img_2814_kopie_2_by_maaira-da4q8b2.jpg',
                             width: 300,
@@ -648,7 +648,7 @@ describe('Metaphor', () => {
                     expect(description).to.equal({
                         type: 'website',
                         url: 'http://www.deviantart.com/art/Who-are-you-612604046',
-                        site_name: 'Deviantart'
+                        site_name: 'DeviantArt'
                     });
 
                     done();
