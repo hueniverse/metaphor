@@ -138,7 +138,7 @@ describe('Metaphor', () => {
                         url: 'http://maaira.deviantart.com/art/Who-are-you-612604046',
                         description: 'Nova meets cows.',
                         type: 'website',
-                        site_name: 'Deviantart',
+                        site_name: 'DeviantArt',
                         sources: ['ogp', 'resource', 'twitter'],
                         icon: {
                             '48': 'http://st.deviantart.net/minish/touch-icons/android-48.png',
@@ -648,7 +648,7 @@ describe('Metaphor', () => {
                     expect(description).to.equal({
                         type: 'website',
                         url: 'http://www.deviantart.com/art/Who-are-you-612604046',
-                        site_name: 'Deviantart'
+                        site_name: 'DeviantArt'
                     });
 
                     done();
